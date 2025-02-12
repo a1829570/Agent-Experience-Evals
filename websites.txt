@@ -1,0 +1,6 @@
+- Static Website
+- Static website with dynamic information and form via javascript:
+- ⁠Un-guided API with form and information: https://dui28nhia9p5ja4r.vercel.app
+- ⁠NextJS Dynamic Website with information and form.
+- ⁠A static website with CAPTCHA
+- ⁠A dynamic website with CAPTCHA
