@@ -1,3 +1,12 @@
+import undetected_chromedriver as uc
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
+import time
+
+
+
+
+
 def start_browser(url):
     """Launches the browser, attempts to bypass CAPTCHA, and proceeds with scraping."""
     print(f"[INFO] Launching browser to access: {url}")

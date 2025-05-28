@@ -1,3 +1,9 @@
+import aiohttp
+import asyncio
+import json
+import os
+from dotenv import load_dotenv
+
 async def check_direct_api(url):
     """Checks for direct API access before attempting scraping."""
     try:

@@ -1,3 +1,8 @@
+import requests
+from bs4 import BeautifulSoup
+
+
+
 
 def scrape_page(driver):
     """Extracts page content dynamically and statically."""
