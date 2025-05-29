@@ -1,0 +1,56 @@
+{
+  "- Static Website": {
+    "browser": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 0.0,
+      "success_rate": 0.0,
+      "avg_time": 0.0
+    }
+  },
+  "- Static website with dynamic information and form via javascript:": {
+    "browser": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 0.0,
+      "success_rate": 0.0,
+      "avg_time": 0.0
+    }
+  },
+  "- \u2060Un-guided API with form and information: https://dui28nhia9p5ja4r.vercel.app": {
+    "browser": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 0.0,
+      "success_rate": 0.0,
+      "avg_time": 0.0
+    }
+  },
+  "- \u2060NextJS Dynamic Website with information and form.": {
+    "browser": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 0.0,
+      "success_rate": 0.0,
+      "avg_time": 0.0
+    }
+  },
+  "- \u2060A static website with CAPTCHA": {
+    "browser": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 0.0,
+      "success_rate": 0.0,
+      "avg_time": 0.0
+    }
+  },
+  "- \u2060A dynamic website with CAPTCHA": {
+    "browser": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 0.0,
+      "success_rate": 0.0,
+      "avg_time": 0.0
+    }
+  }
+}

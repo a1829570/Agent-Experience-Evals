@@ -1,0 +1,12 @@
+aiohttp
+asyncio
+beautifulsoup4
+requests
+selenium
+selenium-wire
+undetected-chromedriver
+webdriver-manager
+openai
+python-dotenv
+crawl4ai
+twocaptcha

@@ -1,0 +1,98 @@
+[
+  {
+    "timestamp": "2025-05-28T17:48:54.351686",
+    "url": "- Static Website",
+    "method": "browser",
+    "success": false,
+    "time_taken": 0.0,
+    "friction": 0.0
+  },
+  {
+    "timestamp": "2025-05-28T17:48:54.352993",
+    "url": "- Static website with dynamic information and form via javascript:",
+    "method": "browser",
+    "success": false,
+    "time_taken": 0.0,
+    "friction": 0.0
+  },
+  {
+    "timestamp": "2025-05-28T17:48:54.353620",
+    "url": "- \u2060Un-guided API with form and information: https://dui28nhia9p5ja4r.vercel.app",
+    "method": "browser",
+    "success": false,
+    "time_taken": 0.0,
+    "friction": 0.0
+  },
+  {
+    "timestamp": "2025-05-28T17:48:54.354288",
+    "url": "- \u2060NextJS Dynamic Website with information and form.",
+    "method": "browser",
+    "success": false,
+    "time_taken": 0.0,
+    "friction": 0.0
+  },
+  {
+    "timestamp": "2025-05-28T17:48:54.354784",
+    "url": "- \u2060A static website with CAPTCHA",
+    "method": "browser",
+    "success": false,
+    "time_taken": 0.0,
+    "friction": 0.0
+  },
+  {
+    "timestamp": "2025-05-28T17:48:54.355335",
+    "url": "- \u2060A dynamic website with CAPTCHA",
+    "method": "browser",
+    "success": false,
+    "time_taken": 0.0,
+    "friction": 0.0
+  },
+  {
+    "timestamp": "2025-05-28T17:49:52.256300",
+    "url": "- Static Website",
+    "method": "browser",
+    "success": false,
+    "time_taken": 0.0,
+    "friction": 0.0
+  },
+  {
+    "timestamp": "2025-05-28T17:49:52.257361",
+    "url": "- Static website with dynamic information and form via javascript:",
+    "method": "browser",
+    "success": false,
+    "time_taken": 0.0,
+    "friction": 0.0
+  },
+  {
+    "timestamp": "2025-05-28T17:49:52.258046",
+    "url": "- \u2060Un-guided API with form and information: https://dui28nhia9p5ja4r.vercel.app",
+    "method": "browser",
+    "success": false,
+    "time_taken": 0.0,
+    "friction": 0.0
+  },
+  {
+    "timestamp": "2025-05-28T17:49:52.259390",
+    "url": "- \u2060NextJS Dynamic Website with information and form.",
+    "method": "browser",
+    "success": false,
+    "time_taken": 0.0,
+    "friction": 0.0
+  },
+  {
+    "timestamp": "2025-05-28T17:49:52.260575",
+    "url": "- \u2060A static website with CAPTCHA",
+    "method": "browser",
+    "success": false,
+    "time_taken": 0.0,
+    "friction": 0.0
+  },
+  {
+    "timestamp": "2025-05-28T17:49:52.261904",
+    "url": "- \u2060A dynamic website with CAPTCHA",
+    "method": "browser",
+    "success": false,
+    "time_taken": 0.0,
+    "friction": 0.0
+  }
+]
