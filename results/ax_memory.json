@@ -1,56 +1,456 @@
 {
   "- Static Website": {
     "browser": {
-      "count": 2,
+      "count": 3,
       "success_count": 0,
-      "total_time": 0.0,
+      "total_time": 13.4,
       "success_rate": 0.0,
-      "avg_time": 0.0
+      "avg_time": 4.466666666666667
     }
   },
   "- Static website with dynamic information and form via javascript:": {
     "browser": {
-      "count": 2,
+      "count": 12,
       "success_count": 0,
-      "total_time": 0.0,
+      "total_time": 6.739999999999999,
       "success_rate": 0.0,
-      "avg_time": 0.0
+      "avg_time": 0.5616666666666666
     }
   },
   "- \u2060Un-guided API with form and information: https://dui28nhia9p5ja4r.vercel.app": {
     "browser": {
-      "count": 2,
+      "count": 12,
       "success_count": 0,
-      "total_time": 0.0,
+      "total_time": 8.609999999999998,
       "success_rate": 0.0,
-      "avg_time": 0.0
+      "avg_time": 0.7174999999999998
     }
   },
   "- \u2060NextJS Dynamic Website with information and form.": {
     "browser": {
-      "count": 2,
+      "count": 12,
       "success_count": 0,
-      "total_time": 0.0,
+      "total_time": 8.139999999999999,
       "success_rate": 0.0,
-      "avg_time": 0.0
+      "avg_time": 0.6783333333333332
     }
   },
   "- \u2060A static website with CAPTCHA": {
     "browser": {
-      "count": 2,
+      "count": 12,
       "success_count": 0,
-      "total_time": 0.0,
+      "total_time": 8.67,
       "success_rate": 0.0,
-      "avg_time": 0.0
+      "avg_time": 0.7225
     }
   },
   "- \u2060A dynamic website with CAPTCHA": {
     "browser": {
+      "count": 12,
+      "success_count": 0,
+      "total_time": 7.57,
+      "success_rate": 0.0,
+      "avg_time": 0.6308333333333334
+    }
+  },
+  "- Static Website:": {
+    "browser": {
+      "count": 9,
+      "success_count": 0,
+      "total_time": 12.35,
+      "success_rate": 0.0,
+      "avg_time": 1.3722222222222222
+    }
+  },
+  "http://localhost:8080/static.html": {
+    "browser": {
+      "count": 1,
+      "success_count": 0,
+      "total_time": 9.1,
+      "success_rate": 0.0,
+      "avg_time": 9.1
+    }
+  },
+  "http://localhost:8080/dynamic.html": {
+    "browser": {
+      "count": 1,
+      "success_count": 0,
+      "total_time": 1.92,
+      "success_rate": 0.0,
+      "avg_time": 1.92
+    }
+  },
+  "http://localhost:8080/api_response.json": {
+    "browser": {
+      "count": 1,
+      "success_count": 0,
+      "total_time": 2.07,
+      "success_rate": 0.0,
+      "avg_time": 2.07
+    }
+  },
+  "https://en.wikipedia.org/wiki/Alan_Turing": {
+    "browser": {
+      "count": 12,
+      "success_count": 7,
+      "total_time": 150.26,
+      "success_rate": 0.5833333333333334,
+      "avg_time": 12.521666666666667
+    },
+    "api": {
+      "count": 63,
+      "success_count": 0,
+      "total_time": 43.71999999999997,
+      "success_rate": 0.0,
+      "avg_time": 0.6939682539682535
+    },
+    "dom": {
+      "count": 65,
+      "success_count": 4,
+      "total_time": 183.14,
+      "success_rate": 0.06153846153846154,
+      "avg_time": 2.8175384615384615
+    }
+  },
+  "https://dui28nhia9p5ja4r.vercel.app": {
+    "browser": {
+      "count": 7,
+      "success_count": 3,
+      "total_time": 72.10000000000001,
+      "success_rate": 0.42857142857142855,
+      "avg_time": 10.3
+    },
+    "api": {
+      "count": 6,
+      "success_count": 0,
+      "total_time": 1.62,
+      "success_rate": 0.0,
+      "avg_time": 0.27
+    },
+    "dom": {
+      "count": 11,
+      "success_count": 6,
+      "total_time": 15.02,
+      "success_rate": 0.5454545454545454,
+      "avg_time": 1.3654545454545455
+    }
+  },
+  "https://www.linkedin.com/jobs/": {
+    "api": {
+      "count": 10,
+      "success_count": 0,
+      "total_time": 5.37,
+      "success_rate": 0.0,
+      "avg_time": 0.537
+    },
+    "dom": {
+      "count": 18,
+      "success_count": 7,
+      "total_time": 27.049999999999997,
+      "success_rate": 0.3888888888888889,
+      "avg_time": 1.5027777777777775
+    },
+    "browser": {
+      "count": 11,
+      "success_count": 6,
+      "total_time": 105.75,
+      "success_rate": 0.5454545454545454,
+      "avg_time": 9.613636363636363
+    }
+  },
+  "https://swapi.py4e.com/api/people/1/": {
+    "api": {
+      "count": 4,
+      "success_count": 4,
+      "total_time": 2.2800000000000002,
+      "success_rate": 1.0,
+      "avg_time": 0.5700000000000001
+    }
+  },
+  "_categories": {
+    "jobs": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 27.34,
+        "success_rate": 1.0,
+        "friction": 27.34
+      }
+    },
+    "the html page can be classified as \"jobs\" because it predominantly features job search functionalities, job categories, and information related to finding employment.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 13.51,
+        "success_rate": 1.0,
+        "friction": 13.51
+      }
+    },
+    "the html page you provided falls under the category of **jobs**. it primarily focuses on job searching and listings, as indicated by frequent mentions of job-related topics, such as internships, careers, and job postings on linkedin.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 16.2,
+        "success_rate": 1.0,
+        "friction": 16.2
+      }
+    },
+    "the html page content suggests it is primarily focused on job listings and job-related information. therefore, this html page should be classified under the \"jobs\" category.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 11.15,
+        "success_rate": 1.0,
+        "friction": 11.15
+      }
+    },
+    "category: jobs": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 63.91,
+        "success_rate": 1.0,
+        "friction": 63.91
+      }
+    },
+    "the html content is classified under the category: jobs.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 13.21,
+        "success_rate": 1.0,
+        "friction": 13.21
+      }
+    },
+    "the html page content provided falls under the \"jobs\" category. it includes keywords and sections related to job search, job postings, trending jobs, companies hiring, and other employment-related resources.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 14.36,
+        "success_rate": 1.0,
+        "friction": 14.36
+      }
+    },
+    "the provided content appears to be json data, not html, and lacks context that is typically found in a webpage. no category like jobs, news, ecommerce, academic, or media is evident from the content itself. it seems to be a general placeholder or a sample data snippet.\n\ntherefore, i classify this as: general.": {
+      "api": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 0.15,
+        "success_rate": 1.0,
+        "friction": 0.15
+      }
+    },
+    "general": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 35.88,
+        "success_rate": 1.0,
+        "friction": 35.88
+      },
+      "api": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 0.8,
+        "success_rate": 1.0,
+        "friction": 0.8
+      }
+    },
+    "the html page content you've provided is best classified as \"academic\". it appears to be documentation for tanstack table, which is part of a technical framework or library typically used for learning or reference in programming and software development contexts.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 15.28,
+        "success_rate": 1.0,
+        "friction": 15.28
+      }
+    },
+    "this html page falls under the category of \"academic.\" the content is from a wikipedia page about alan turing, which includes detailed sections on his life, career, and contributions to computing and mathematics. wikipedia itself often serves as a reference for educational and informational purposes, aligning with the academic category.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 31.51,
+        "success_rate": 1.0,
+        "friction": 31.51
+      }
+    },
+    "the html page belongs to the category: jobs.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 15.97,
+        "success_rate": 1.0,
+        "friction": 15.97
+      }
+    },
+    "the content provided appears to be a json data snippet with no clear indication of context applicable to html page categories like jobs, news, ecommerce, etc. based on the structure, this data does not categorize specifically into any of those given categories. however, in absence of any specific context or html elements related to jobs, news, etc., it could be classified as \"general.\"": {
+      "api": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 0.42,
+        "success_rate": 1.0,
+        "friction": 0.42
+      }
+    },
+    "the html page can be classified as \"general\" because it serves as a placeholder for illustrative purposes and does not fit specifically into the categories of jobs, news, ecommerce, academic, or media.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 42.11,
+        "success_rate": 1.0,
+        "friction": 42.11
+      }
+    },
+    "the content of the html page is best classified as \"academic.\" it contains documentation and guides related to tanstack table, a library often used for web development and technical purposes.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 16.81,
+        "success_rate": 1.0,
+        "friction": 16.81
+      }
+    },
+    "the html page you provided is best classified as **academic**. it appears to be a wikipedia page about alan turing, providing detailed information about his life, career, and contributions to computing and mathematics. wikipedia is generally used for educational and informational purposes, which aligns with the academic category.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 16.98,
+        "success_rate": 1.0,
+        "friction": 16.98
+      }
+    },
+    "this html page belongs to the \"jobs\" category.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 18.42,
+        "success_rate": 1.0,
+        "friction": 18.42
+      }
+    }
+  },
+  "https://au.indeed.com/?r=us": {
+    "api": {
+      "count": 5,
+      "success_count": 0,
+      "total_time": 1.19,
+      "success_rate": 0.0,
+      "avg_time": 0.238
+    },
+    "dom": {
+      "count": 8,
+      "success_count": 0,
+      "total_time": 24.02,
+      "success_rate": 0.0,
+      "avg_time": 3.0025
+    },
+    "browser": {
+      "count": 11,
+      "success_count": 6,
+      "total_time": 154.17000000000002,
+      "success_rate": 0.5454545454545454,
+      "avg_time": 14.015454545454547
+    }
+  },
+  "https://jsonplaceholder.typicode.com/posts/1": {
+    "api": {
+      "count": 3,
+      "success_count": 3,
+      "total_time": 1.37,
+      "success_rate": 1.0,
+      "avg_time": 0.4566666666666667
+    }
+  },
+  "https://www.example.com/": {
+    "api": {
       "count": 2,
       "success_count": 0,
-      "total_time": 0.0,
+      "total_time": 0.48,
       "success_rate": 0.0,
-      "avg_time": 0.0
+      "avg_time": 0.24
+    },
+    "dom": {
+      "count": 3,
+      "success_count": 0,
+      "total_time": 9.01,
+      "success_rate": 0.0,
+      "avg_time": 3.0033333333333334
+    },
+    "browser": {
+      "count": 3,
+      "success_count": 2,
+      "total_time": 79.35000000000001,
+      "success_rate": 0.6666666666666666,
+      "avg_time": 26.450000000000003
+    }
+  },
+  "https://react-table.tanstack.com/docs/overview": {
+    "api": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 0.5,
+      "success_rate": 0.0,
+      "avg_time": 0.25
+    },
+    "dom": {
+      "count": 3,
+      "success_count": 0,
+      "total_time": 9.01,
+      "success_rate": 0.0,
+      "avg_time": 3.0033333333333334
+    },
+    "browser": {
+      "count": 3,
+      "success_count": 2,
+      "total_time": 33.419999999999995,
+      "success_rate": 0.6666666666666666,
+      "avg_time": 11.139999999999999
+    }
+  },
+  "https://www.w3schools.com/html/html_forms.asp": {
+    "browser": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 246.87,
+      "success_rate": 0.0,
+      "avg_time": 123.435
+    },
+    "api": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 0.72,
+      "success_rate": 0.0,
+      "avg_time": 0.36
+    },
+    "dom": {
+      "count": 4,
+      "success_count": 0,
+      "total_time": 12.02,
+      "success_rate": 0.0,
+      "avg_time": 3.005
+    }
+  },
+  "https://www.seek.com.au": {
+    "api": {
+      "count": 1,
+      "success_count": 0,
+      "total_time": 0.44,
+      "success_rate": 0.0,
+      "avg_time": 0.44
+    },
+    "dom": {
+      "count": 1,
+      "success_count": 0,
+      "total_time": 3.01,
+      "success_rate": 0.0,
+      "avg_time": 3.01
+    },
+    "browser": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 6.19,
+      "success_rate": 0.0,
+      "avg_time": 3.095
     }
   }
 }

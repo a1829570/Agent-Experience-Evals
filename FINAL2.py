@@ -370,5 +370,5 @@ async def main(url):
         process_web_content(content)
 
 if __name__ == "__main__":
-    target_url = "https://www.linkedin.com/jobs/"
+    target_url = "https://en.wikipedia.org/wiki/Cristiano_Ronaldo"
     asyncio.run(main(target_url))

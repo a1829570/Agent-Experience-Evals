@@ -44,9 +44,10 @@ from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common.exceptions import MoveTargetOutOfBoundsException
-from formdetection import (
+from form_handling.formdetection import (
     fill_all_forms,  # main function that detects & fills forms
 )
+import re
 # Load environment variables
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
@@ -58,31 +59,48 @@ client = OpenAI(api_key=api_key)
 
 def process_web_content(content):
     print("Processing Web Content...")
+
+    # Clean and truncate content
+    cleaned = re.sub(r'\s+', ' ', content)
+    content_to_send = cleaned[:3000]
+
+    # Create assistant
     assistant = client.beta.assistants.create(
-        name="Web Content Summarizer",
-        instructions="You are an assistant that extracts and summarizes web data using Python.",
-        tools=[{"type": "code_interpreter"}],
-        model="gpt-4-turbo"
+        name="Web Extractor",
+        instructions="You are a helpful assistant that extracts structured key points such as names, dates, locations, and facts from HTML web content. Focus on clarity and brevity.",
+        model="gpt-4o",
+        tools=[{"type": "code_interpreter"}]
     )
 
+    # Create thread and send message
     thread = client.beta.threads.create()
-
     client.beta.threads.messages.create(
         thread_id=thread.id,
         role="user",
-        content=f"Extract and summarize the following content:\n\n{content[:3000]}"
+        content=f"Extract and summarize key facts from this page content:\n\n{content_to_send}"
     )
 
-    run = client.beta.threads.runs.create_and_poll(
+    # Start run
+    run = client.beta.threads.runs.create(
         thread_id=thread.id,
         assistant_id=assistant.id,
-        instructions="Extract key information from the provided content."
+        instructions="Focus on summarizing the most important content from the user's message."
     )
 
-    if run.status == 'completed':
-        messages = client.beta.threads.messages.list(thread_id=thread.id)
-        for message in messages.data:
-            if message.role == "assistant":
-                print(message.content[0].text.value)
-    else:
-        print(f"Run status: {run.status}")
+    # Poll run status
+    while True:
+        current_run = client.beta.threads.runs.retrieve(thread_id=thread.id, run_id=run.id)
+        if current_run.status == "completed":
+            break
+        elif current_run.status in ["failed", "cancelled", "expired"]:
+            print(f"Run status: {current_run.status}")
+            if current_run.last_error:
+                print("Error details:", current_run.last_error)
+            return
+        time.sleep(2)
+
+    # Get assistant message response
+    messages = client.beta.threads.messages.list(thread_id=thread.id)
+    for message in messages.data:
+        if message.role == "assistant":
+            print(message.content[0].text.value)

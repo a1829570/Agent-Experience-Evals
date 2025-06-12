@@ -1,0 +1,13 @@
+{
+    "live_test_urls": [
+        "https://en.wikipedia.org/wiki/Alan_Turing",
+        "https://dui28nhia9p5ja4r.vercel.app",
+        "https://www.google.com/recaptcha/api2/demo",
+        "https://books.toscrape.com"
+    ],
+    "local_test_files": [
+        "testsuite/static.html",
+        "testsuite/dynamic.html",
+        "testsuite/api_response.json"
+    ]
+}

@@ -1,6 +1,10 @@
-- Static Website
-- Static website with dynamic information and form via javascript:
-- ⁠Un-guided API with form and information: https://dui28nhia9p5ja4r.vercel.app
-- ⁠NextJS Dynamic Website with information and form.
-- ⁠A static website with CAPTCHA
-- ⁠A dynamic website with CAPTCHA
+
+
+https://www.seek.com.au
+https://jsonplaceholder.typicode.com/posts/1
+https://www.example.com/
+https://react-table.tanstack.com/docs/overview
+https://www.w3schools.com/html/html_forms.asp
+https://en.wikipedia.org/wiki/Alan_Turing
+https://au.indeed.com/?r=us
+

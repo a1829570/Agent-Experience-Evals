@@ -14,6 +14,11 @@ class AXMemory:
                 return json.load(f)
         return {}
 
+    @property
+    def url_log(self):
+        return {k for k in self.memory if not k.startswith("_")}
+
+
     def save(self):
         with open(self.path, "w") as f:
             json.dump(self.memory, f, indent=2)
@@ -22,18 +27,51 @@ class AXMemory:
         return self.memory.get(url)
 
     def update(self, url, method, success, time_taken):
-        if url not in self.memory:
-            self.memory[url] = defaultdict(lambda: {"count": 0, "success_count": 0, "total_time": 0.0})
+        """Update individual URL-based performance metrics."""
+        self.memory.setdefault(url, {})
+        self.memory[url].setdefault(method, {
+            "count": 0, "success_count": 0, "total_time": 0.0
+        })
 
-        if method not in self.memory[url]:
-            self.memory[url][method] = {"count": 0, "success_count": 0, "total_time": 0.0}
+        stats = self.memory[url][method]
+        stats["count"] += 1
+        stats["success_count"] += int(success)
+        stats["total_time"] += time_taken
+        stats["success_rate"] = stats["success_count"] / stats["count"]
+        stats["avg_time"] = stats["total_time"] / stats["count"]
 
-        entry = self.memory[url][method]
-        entry["count"] += 1
-        entry["success_count"] += int(success)
-        entry["total_time"] += time_taken
+    def log(self, url, method, result):
+        """Unified logging for both URL and category-based memory."""
+        self.update(url, method, result["success"], result["time"])
 
-        entry["success_rate"] = entry["success_count"] / entry["count"]
-        entry["avg_time"] = entry["total_time"] / entry["count"]
+        category = result.get("category")
+        if category:
+            self._log_category(category, method, result["success"], result["time"])
 
         self.save()
+    def _log_category(self, category, method, success, time_taken):
+        """Update memory by content category."""
+        self.memory.setdefault("_categories", {})
+        self.memory["_categories"].setdefault(category, {})
+        self.memory["_categories"][category].setdefault(method, {
+            "count": 0, "success_count": 0, "total_time": 0.0
+        })
+
+        stats = self.memory["_categories"][category][method]
+        stats["count"] += 1
+        stats["success_count"] += int(success)
+        stats["total_time"] += time_taken
+        stats["success_rate"] = stats["success_count"] / stats["count"]
+        stats["friction"] = stats["total_time"] / stats["count"]
+
+    def get_category_stats(self, category):
+        """Return success & friction stats for a content category."""
+        fallback = {
+            "api": {"success_rate": 0.0, "friction": 1.0},
+            "dom": {"success_rate": 0.0, "friction": 1.5},
+            "browser": {"success_rate": 0.0, "friction": 2.0}
+        }
+        return self.memory.get("_categories", {}).get(category, fallback)
+
+    def has_url(self, url):
+        return url in self.memory

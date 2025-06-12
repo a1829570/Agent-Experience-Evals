@@ -13,65 +13,60 @@ api_key = os.getenv("OPENAI_API_KEY")
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
 
 
+import httpx
+import json
+import logging
+from urllib.parse import urljoin
+from bs4 import BeautifulSoup
+
 class APIExtractor:
     def __init__(self):
-        self.api_key = api_key
-        self.user_agent = USER_AGENT
-        self.default_paths = ["/api", "/v1", "/graphql", "/wp-json", "/data", "/w/api.php"]
-        self.extraction_strategy = LLMExtractionStrategy(
-            provider="openai/gpt-4o",
-            api_token=self.api_key,
-            schema={"api_url": "string", "description": "string"},
-            instruction="Extract API endpoints or references from web content or JSON data."
-        )
-
-    async def check_direct_api(self, url):
-        """Checks for direct API access before attempting scraping."""
-        try:
-            headers = {"User-Agent": self.user_agent}
-            async with aiohttp.ClientSession() as session:
-                async with session.get(url, headers=headers, timeout=10) as resp:
-                    if resp.status == 200:
-                        print(f"[INFO] Direct API success: {url}")
-                        return await resp.json()
-                    else:
-                        print(f"[ERROR] API call failed with status code {resp.status}")
-        except Exception as e:
-            print(f"[ERROR] Direct API error: {e}")
-        return None
-
-    async def async_api_check(self, url, paths=None):
-        """Checks common paths for API availability and uses LLM to extract content."""
-        headers = {"User-Agent": self.user_agent}
-        paths = paths or self.default_paths
-
-        async with aiohttp.ClientSession() as session:
-            tasks = [
-                session.get(f"{url.rstrip('/')}{path}", headers=headers)
-                for path in paths
-            ]
-            responses = await asyncio.gather(*tasks, return_exceptions=True)
-
-            for response in responses:
-                if isinstance(response, Exception):
-                    print(f"Request failed: {response}")
-                    continue
-                if response.status == 200:
-                    print(f"Potential API response at {response.url}")
-                    extracted_content = self.extraction_strategy.extract_from_text(await response.text())
-                    if extracted_content:
-                        print("Extracted API content with LLM:", extracted_content)
-                        return extracted_content
-        return None
+        self.session = httpx.AsyncClient(timeout=10.0)
 
     async def extract(self, url):
-        """Unified method to try direct API access and fallback to async discovery."""
-        result = await self.check_direct_api(url)
-        if result:
-            return {"type": "api", "data": result}
+        print(f"[INFO] Checking {url} for API access...")
 
-        fallback = await self.async_api_check(url)
-        if fallback:
-            return {"type": "api", "data": fallback}
+        try:
+            response = await self.session.get(url)
+            content_type = response.headers.get("Content-Type", "")
 
-        return {"type": "none", "data": None}
+            if "application/json" in content_type or "application/vnd.api+json" in content_type:
+                print(f"[INFO] Direct API success: {url}")
+                return self._safe_json(response)
+
+            # Not JSON: check for embedded APIs or XHR endpoints
+            print(f"[ERROR] Direct API error: {response.status_code}, message='{response.reason_phrase}', url='{url}'")
+            print("[INFO] Attempting to extract API endpoints from page...")
+            return await self._extract_from_html(url, response.text)
+
+        except Exception as e:
+            print(f"[ERROR] APIExtractor failed for {url}: {str(e)}")
+            return None
+
+    def _safe_json(self, response):
+        try:
+            return response.json()
+        except Exception:
+            print("[ERROR] Failed to parse JSON from response.")
+            return None
+
+    async def _extract_from_html(self, base_url, html):
+        soup = BeautifulSoup(html, "html.parser")
+        scripts = soup.find_all("script")
+
+        api_candidates = []
+
+        for script in scripts:
+            if not script.string:
+                continue
+            if "fetch(" in script.string or "axios." in script.string:
+                api_candidates.append(script.string)
+
+        if api_candidates:
+            print(f"[INFO] Found {len(api_candidates)} API-related scripts.")
+            return {
+                "type": "script-analysis",
+                "candidates": api_candidates[:5]  # Limit output
+            }
+
+        return None

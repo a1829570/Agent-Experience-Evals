@@ -1,0 +1,8 @@
+{
+    "status": "success",
+    "message": "Welcome to the API Endpoint!",
+    "data": [
+        { "id": 1, "name": "John Doe", "role": "Engineer" },
+        { "id": 2, "name": "Jane Smith", "role": "Designer" }
+    ]
+}
