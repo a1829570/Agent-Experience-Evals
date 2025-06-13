@@ -51,7 +51,7 @@ class BrowserController:
             except Exception:
                 return None
 
-    def configure_driver(self):
+    def configure_driver(self, max_retries=3):
         options = ChromeOptions()
         options.add_argument("--disable-blink-features=AutomationControlled")
         options.add_argument("--disable-infobars")
@@ -61,16 +61,25 @@ class BrowserController:
         options.add_argument("--disable-webrtc")
         options.add_argument(f"user-agent={USER_AGENT}")
 
-        driver_path = ChromeDriverManager().install()
-        print(f"[INFO] Using ChromeDriver: {driver_path}")
+        for attempt in range(1, max_retries + 1):
+            try:
+                driver_path = ChromeDriverManager().install()
+                print(f"[INFO] Attempt {attempt}: Using ChromeDriver: {driver_path}")
 
-        chrome_version = self.get_local_chrome_version()
-        if not chrome_version:
-            raise RuntimeError("Could not detect Chrome version.")
+                chrome_version = self.get_local_chrome_version()
+                if not chrome_version:
+                    raise RuntimeError("Could not detect Chrome version.")
 
-        version_main = int(chrome_version.split('.')[0])
-        driver = Chrome(driver_executable_path=driver_path, options=options, version_main=version_main)
-        return driver
+                version_main = int(chrome_version.split('.')[0])
+                driver = Chrome(driver_executable_path=driver_path, options=options, version_main=version_main)
+                return driver
+
+            except Exception as e:
+                print(f"[WARN] ChromeDriver setup failed on attempt {attempt}: {e}")
+                time.sleep(2)  # small delay before retry
+
+        raise RuntimeError("Failed to configure ChromeDriver after multiple attempts.")
+
 
     async def open(self, url, fill_forms=True):
         driver = None

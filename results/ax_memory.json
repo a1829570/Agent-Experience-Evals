@@ -170,11 +170,11 @@
   "_categories": {
     "jobs": {
       "browser": {
-        "count": 1,
-        "success_count": 1,
-        "total_time": 27.34,
+        "count": 12,
+        "success_count": 12,
+        "total_time": 402.1000000000001,
         "success_rate": 1.0,
-        "friction": 27.34
+        "friction": 33.50833333333334
       }
     },
     "the html page can be classified as \"jobs\" because it predominantly features job search functionalities, job categories, and information related to finding employment.": {
@@ -327,29 +327,110 @@
         "success_rate": 1.0,
         "friction": 18.42
       }
+    },
+    "the html page provided is best classified under the \"jobs\" category. it contains content related to job searching and job listings.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 14.0,
+        "success_rate": 1.0,
+        "friction": 14.0
+      }
+    },
+    "the html page is classified as: jobs": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 22.32,
+        "success_rate": 1.0,
+        "friction": 22.32
+      }
+    },
+    "the html page you've provided belongs to the \"jobs\" category. the content focuses on job listings, employment resources, resume building, and job application processes.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 30.72,
+        "success_rate": 1.0,
+        "friction": 30.72
+      }
+    },
+    "the html page is classified as: jobs.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 25.08,
+        "success_rate": 1.0,
+        "friction": 25.08
+      }
+    },
+    "the html page falls into the category: jobs.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 26.92,
+        "success_rate": 1.0,
+        "friction": 26.92
+      }
+    },
+    "the html page content you provided is best classified under the \"jobs\" category. this content revolves around career opportunities and positions available within the adf (australian defence force), including details about various roles, entry paths, and job descriptions.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 35.53,
+        "success_rate": 1.0,
+        "friction": 35.53
+      }
+    },
+    "the html content you provided is categorized as \"jobs\" because it focuses on career opportunities and roles within the australian defence force (adf), including details about various positions, how to join, and career match tools.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 29.38,
+        "success_rate": 1.0,
+        "friction": 29.38
+      }
+    },
+    "the html page belongs to the \"jobs\" category.": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 26.6,
+        "success_rate": 1.0,
+        "friction": 26.6
+      }
+    },
+    "the html page is categorized as \"jobs\".": {
+      "browser": {
+        "count": 1,
+        "success_count": 1,
+        "total_time": 26.91,
+        "success_rate": 1.0,
+        "friction": 26.91
+      }
     }
   },
   "https://au.indeed.com/?r=us": {
     "api": {
-      "count": 5,
+      "count": 6,
       "success_count": 0,
-      "total_time": 1.19,
+      "total_time": 1.66,
       "success_rate": 0.0,
-      "avg_time": 0.238
+      "avg_time": 0.27666666666666667
     },
     "dom": {
-      "count": 8,
+      "count": 9,
       "success_count": 0,
-      "total_time": 24.02,
+      "total_time": 27.02,
       "success_rate": 0.0,
-      "avg_time": 3.0025
+      "avg_time": 3.002222222222222
     },
     "browser": {
-      "count": 11,
-      "success_count": 6,
-      "total_time": 154.17000000000002,
-      "success_rate": 0.5454545454545454,
-      "avg_time": 14.015454545454547
+      "count": 12,
+      "success_count": 7,
+      "total_time": 168.17000000000002,
+      "success_rate": 0.5833333333333334,
+      "avg_time": 14.014166666666668
     }
   },
   "https://jsonplaceholder.typicode.com/posts/1": {
@@ -432,25 +513,156 @@
   },
   "https://www.seek.com.au": {
     "api": {
-      "count": 1,
-      "success_count": 0,
-      "total_time": 0.44,
-      "success_rate": 0.0,
-      "avg_time": 0.44
-    },
-    "dom": {
-      "count": 1,
-      "success_count": 0,
-      "total_time": 3.01,
-      "success_rate": 0.0,
-      "avg_time": 3.01
-    },
-    "browser": {
       "count": 2,
       "success_count": 0,
-      "total_time": 6.19,
+      "total_time": 0.8300000000000001,
       "success_rate": 0.0,
-      "avg_time": 3.095
+      "avg_time": 0.41500000000000004
+    },
+    "dom": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 6.01,
+      "success_rate": 0.0,
+      "avg_time": 3.005
+    },
+    "browser": {
+      "count": 3,
+      "success_count": 1,
+      "total_time": 26.82,
+      "success_rate": 0.3333333333333333,
+      "avg_time": 8.94
+    }
+  },
+  "https://www.careerone.com.au": {
+    "api": {
+      "count": 9,
+      "success_count": 0,
+      "total_time": 5.140000000000001,
+      "success_rate": 0.0,
+      "avg_time": 0.5711111111111111
+    },
+    "dom": {
+      "count": 9,
+      "success_count": 0,
+      "total_time": 27.0,
+      "success_rate": 0.0,
+      "avg_time": 3.0
+    },
+    "browser": {
+      "count": 11,
+      "success_count": 5,
+      "total_time": 140.58999999999997,
+      "success_rate": 0.45454545454545453,
+      "avg_time": 12.78090909090909
+    }
+  },
+  "https://www.jobleads.com/registration/100/jobs/en/global/Jora-Jobs/all/jora?utm_source=google-ads_au-search_AU__&utm_content=PerformanceMax|EN|AU|AU_PerformanceMax_search-pmax_70&utm_medium=sea-ad&utm_campaign=PerformanceMax|EN|AU|AU&gad_source=1&gad_campaignid=22483428680&gclid=Cj0KCQjw0qTCBhCmARIsAAj8C4bHtQoSKfVlYsn0PNZ89bxUF2HpjWgiBgu9dRmhwOuPgaZ8O1RXAOsaAoGcEALw_wcB": {
+    "browser": {
+      "count": 7,
+      "success_count": 3,
+      "total_time": 100.82999999999998,
+      "success_rate": 0.42857142857142855,
+      "avg_time": 14.404285714285711
+    },
+    "api": {
+      "count": 6,
+      "success_count": 0,
+      "total_time": 13.16,
+      "success_rate": 0.0,
+      "avg_time": 2.1933333333333334
+    },
+    "dom": {
+      "count": 7,
+      "success_count": 0,
+      "total_time": 21.0,
+      "success_rate": 0.0,
+      "avg_time": 3.0
+    }
+  },
+  "https://www.adfcareers.gov.au/careers": {
+    "api": {
+      "count": 8,
+      "success_count": 0,
+      "total_time": 2.3,
+      "success_rate": 0.0,
+      "avg_time": 0.2875
+    },
+    "dom": {
+      "count": 8,
+      "success_count": 0,
+      "total_time": 24.02,
+      "success_rate": 0.0,
+      "avg_time": 3.0025
+    },
+    "browser": {
+      "count": 7,
+      "success_count": 5,
+      "total_time": 162.99,
+      "success_rate": 0.7142857142857143,
+      "avg_time": 23.284285714285716
+    }
+  },
+  "https://www.randstad.com.au/jobs/south-australia/": {
+    "api": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 1.95,
+      "success_rate": 0.0,
+      "avg_time": 0.975
+    },
+    "dom": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 6.01,
+      "success_rate": 0.0,
+      "avg_time": 3.005
+    },
+    "browser": {
+      "count": 1,
+      "success_count": 1,
+      "total_time": 112.41,
+      "success_rate": 1.0,
+      "avg_time": 112.41
+    }
+  },
+  "https://viewjobs.com.au/?gad_source=1&gad_campaignid=22391712191&gclid=CjwKCAjw9anCBhAWEiwAqBJ-cylPOPdVp1X-RAAhpDQECX5QA9Femq5E4lX3nEE3iWZTgTQIMOS1rxoCC1sQAvD_BwE": {
+    "api": {
+      "count": 14,
+      "success_count": 0,
+      "total_time": 4.1,
+      "success_rate": 0.0,
+      "avg_time": 0.2928571428571428
+    },
+    "dom": {
+      "count": 14,
+      "success_count": 0,
+      "total_time": 42.05,
+      "success_rate": 0.0,
+      "avg_time": 3.0035714285714286
+    },
+    "browser": {
+      "count": 9,
+      "success_count": 4,
+      "total_time": 157.71,
+      "success_rate": 0.4444444444444444,
+      "avg_time": 17.523333333333333
+    }
+  },
+  "https://www.flexjobs.com/lp/remote-jobs1/t5?utm_source=google&utm_medium=sem&utm_campaign=12199389005&utm_term=findajob&network=g&device=c&adposition=&adgroupid=148170843765&placement=&adid=666368667006&gad_source=1&gad_campaignid=12199389005&gclid=CjwKCAjw9anCBhAWEiwAqBJ-c4pFwTVP-ofnvEMzHfTvgedQYy7ee4CLgQ9TX790dfON7UX_DlJSdhoC-FwQAvD_BwE": {
+    "api": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 20.36,
+      "success_rate": 0.0,
+      "avg_time": 10.18
+    },
+    "dom": {
+      "count": 2,
+      "success_count": 0,
+      "total_time": 6.01,
+      "success_rate": 0.0,
+      "avg_time": 3.005
     }
   }
 }

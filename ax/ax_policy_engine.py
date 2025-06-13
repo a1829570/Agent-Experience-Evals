@@ -1,4 +1,6 @@
 from ax.ax_memory import AXMemory
+from urllib.parse import urlparse
+
 
 class AXPolicyEngine:
     def __init__(self, memory: AXMemory):

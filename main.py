@@ -3,7 +3,7 @@ from agent.task_executor import TaskExecutor
 from ax.ax_memory import AXMemory
 from ax.ax_policy_engine import AXPolicyEngine
 from ax.experience_logger import ExperienceLogger
-
+from urllib.parse import urlparse
 import matplotlib.pyplot as plt
 
 async def main():
@@ -26,7 +26,17 @@ async def main():
         }
 
         try:
-            method = policy.decide(url, config)
+            parsed_url = urlparse(url).netloc
+            category = memory.get_category_by_domain(parsed_url)
+
+            if category:
+                print(f"[INFO] Found similar domain category: {category}")
+                preferred = memory.get_best_method_for_category(category)
+                print(f"[INFO] Trying best method for this category: {preferred}")
+                method = preferred
+            else:
+                method = policy.decide(url, config)
+
             result = await executor.run(method, url, config)
 
             result.setdefault("time", 0.0)
@@ -43,27 +53,32 @@ async def main():
     # === PLOT METRICS ===
     urls, methods, successes, times, frictions = zip(*metrics)
 
-    plt.figure()
-    plt.barh(urls, times)
+    import os
+
+    os.makedirs("graphs", exist_ok=True)
+
+    plt.figure(figsize=(10, len(urls) * 0.25))
+    plt.barh(urls, times, color='skyblue')
     plt.xlabel("Execution Time (s)")
     plt.title("Execution Time per Website")
     plt.tight_layout()
-    plt.show()
+    plt.savefig("graphs/execution_time.png")
 
-    plt.figure()
-    plt.barh(urls, frictions)
+    plt.figure(figsize=(15, len(urls) * 0.4))  # Wider and taller
+    plt.barh(urls, frictions, color='salmon')
     plt.xlabel("Friction")
     plt.title("Friction per Website")
     plt.tight_layout()
-    plt.show()
+    plt.savefig("graphs/friction.png")
 
     method_usage = {m: methods.count(m) for m in set(methods)}
-    plt.figure()
-    plt.bar(method_usage.keys(), method_usage.values())
+    plt.figure(figsize=(8, 6))
+    plt.bar(method_usage.keys(), method_usage.values(), color='lightgreen')
     plt.ylabel("Count")
     plt.title("Strategy Method Usage")
     plt.tight_layout()
-    plt.show()
+    plt.savefig("graphs/method_usage.png")
+
 
     success_rate = sum(successes) / len(successes) if successes else 0
     print(f"\n✅ Success Rate: {success_rate * 100:.1f}%")
