@@ -5,35 +5,50 @@ AX is an advanced, modular AI-driven agent designed to intelligently interact wi
 
 ---
 
-## 🌐 What It Does
+🧠 AX Workflow
 
-AX is capable of:
-- Extracting structured or unstructured content from any webpage using multiple strategies: API detection, DOM scraping, and browser automation.
-- Making intelligent decisions based on past interactions (experience_log.json) and category/domain similarity (ax_memory.json).
-- Dynamically switching strategies mid-run based on performance and success.
-- Summarizing extracted content using LLMs for enhanced understanding and downstream use.
+The AX Agent’s workflow is a five-phase pipeline:
+
+### 1. 🔗 URL Intake  
+Reads target websites from `websites.txt` and processes them one by one.
+
+### 2. 📚 Memory Lookup + Category Inference  
+- If the domain was seen before, AX reuses the best-scoring strategy.
+- If new, it infers a **semantic category** using OpenAI LLMs or prior examples.
+- It chooses the best method used on similar sites (e.g., job boards, universities).
+
+### 3. 🛠 Method Execution  
+Executes one of the following strategies:
+- `api`: Extracts content via network calls or API endpoints
+- `dom`: Pulls page source directly, even if JS-rendered
+- `browser`: Uses Selenium to simulate full human interaction
+
+Falls back if a method fails and logs each attempt.
+
+### 4. 🧠 LLM Summarization  
+Summarizes the extracted content using a conversational LLM (via OpenAI Assistants API), yielding clean, readable output.
+
+### 5. 📊 Logging + Feedback  
+- Updates `ax_memory.json` with method performance by domain & category
+- Stores experiences in `experience_log.json`
+- Generates success graphs, runtime visualizations, and friction metrics
 
 ---
 
-## 🧠 What Makes AX Intelligent
+## 💡 What Makes It Intelligent?
 
-Unlike the original FINALAGENT.py implementation which followed a rigid strategy (API → DOM → Browser), AX introduces:
+| Feature                             | `FINALAGENT.py` | **AX Agent** |
+|------------------------------------|------------------|--------------|
+| Fixed order (api → dom → browser)  | ✅               | ❌           |
+| Reuses best strategy by domain     | ❌               | ✅           |
+| Learns by semantic category        | ❌               | ✅           |
+| LLM summarization of content       | ❌               | ✅           |
+| Tracks runtime + friction          | ❌               | ✅           |
+| Visualizes performance             | ❌               | ✅           |
+| Intelligent retry + method selection | ❌             | ✅           |
 
-1. **Memory-Driven Strategy Selection:**
-   - AX uses experience logs to record success/failure and friction scores for each method on each URL.
-   - It computes the best strategy for new URLs based on exact match, domain-level similarity, or LLM-based categorization.
+AX Agent is built with **modularity, memory, and reasoning** to improve with every execution.
 
-2. **Category-Based Intelligence:**
-   - New domains inherit strategies from previously seen similar domains (e.g., seek.com.au uses the strategy that worked on indeed.com).
-
-3. **LLM-Augmented Content Processing:**
-   - After retrieving content, AX passes it to an OpenAI LLM (Assistant API) to generate concise summaries for downstream tasks.
-   - Summaries are cached and used to update memory and guide future decisions.
-
-4. **Fallback Handling:**
-   - Each strategy falls back intelligently if it fails, with full trace logs and summaries of outcomes.
-
----
 
 ## 📁 Repository Structure
 
