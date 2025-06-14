@@ -20,7 +20,9 @@ class AXMemory:
         for category, domains in self.data["categories"].items():
             for known_domain in domains:
                 if domain == known_domain:
+                    print(f"[DEBUG] Domain '{domain}' matched to category '{category}'")
                     return category
+        print(f"[DEBUG] Domain '{domain}' did not match any known category")
         return None
 
     def get_categories(self):
@@ -69,3 +71,4 @@ class AXMemory:
 
         with self.filepath.open("w") as f:
             json.dump(self.data, f, indent=2)
+        print(f"[DEBUG] Memory updated and written to file for URL: {url}")

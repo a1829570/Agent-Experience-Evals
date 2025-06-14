@@ -31,13 +31,14 @@ async def main():
             category = memory.get_category_by_domain(parsed_url)
 
             if category:
-                print(f"[INFO] Found similar domain category: {category}")
+                print(f"[DEBUG] Found matching category for domain '{parsed_url}': {category}")
                 preferred = memory.get_best_method_for_category(category)
-                print(f"[INFO] Trying best method for this category: {preferred}")
+                print(f"[DEBUG] Using preferred method for category '{category}': {preferred}")
                 method = preferred
             else:
+                print(f"[DEBUG] No known category for domain '{parsed_url}'. Falling back to policy engine.")
                 method = policy.decide(url, config)
-
+                print(f"[DEBUG] Policy engine selected method: {method}")
             result = await executor.run(method, url, config)
 
             # Ensure defaults
@@ -48,6 +49,7 @@ async def main():
             final_method = result.get("final_method", method)
 
             if result["success"]:
+                print(f"[DEBUG] Logging result to memory — URL: {url}, Method: {final_method}, Category: {category}")
                 memory.log(url, final_method, {
                     "success": result["success"],
                     "time": result["time"],
