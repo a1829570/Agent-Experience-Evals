@@ -1,3 +1,4 @@
+# --- main.py ---
 import asyncio
 from agent.task_executor import TaskExecutor
 from ax.ax_memory import AXMemory
@@ -14,7 +15,7 @@ async def main():
     policy = AXPolicyEngine(memory)
     executor = TaskExecutor(memory)
 
-    metrics = []  # Store tuples of (url, method, success, time, friction)
+    metrics = []
 
     for url in websites:
         print(f"\n🔗 Processing: {url}")
@@ -39,22 +40,31 @@ async def main():
 
             result = await executor.run(method, url, config)
 
+            # Ensure defaults
             result.setdefault("time", 0.0)
             result.setdefault("friction", 2.0)
             result.setdefault("success", False)
 
-            print(f"[LOG] {method.upper()} - Success: {result['success']}, Time: {result['time']}s, Friction: {result['friction']}")
-            metrics.append((url, method, result["success"], result["time"], result["friction"]))
+            final_method = result.get("final_method", method)
+
+            if result["success"]:
+                memory.log(url, final_method, {
+                    "success": result["success"],
+                    "time": result["time"],
+                    "category": category
+                })
+
+            print(f"[LOG] {final_method.upper()} - Success: {result['success']}, Time: {result['time']}s, Friction: {result['friction']}")
+            metrics.append((url, final_method, result["success"], result["time"], result["friction"]))
 
         except Exception as e:
             print(f"[ERROR] Failed to process {url}: {e}")
-            metrics.append((url, method, False, 0.0, 2.0))
+            metrics.append((url, method if 'method' in locals() else 'unknown', False, 0.0, 2.0))
 
     # === PLOT METRICS ===
     urls, methods, successes, times, frictions = zip(*metrics)
 
     import os
-
     os.makedirs("graphs", exist_ok=True)
 
     plt.figure(figsize=(10, len(urls) * 0.25))
@@ -64,7 +74,7 @@ async def main():
     plt.tight_layout()
     plt.savefig("graphs/execution_time.png")
 
-    plt.figure(figsize=(15, len(urls) * 0.4))  # Wider and taller
+    plt.figure(figsize=(15, len(urls) * 0.4))
     plt.barh(urls, frictions, color='salmon')
     plt.xlabel("Friction")
     plt.title("Friction per Website")
@@ -78,7 +88,6 @@ async def main():
     plt.title("Strategy Method Usage")
     plt.tight_layout()
     plt.savefig("graphs/method_usage.png")
-
 
     success_rate = sum(successes) / len(successes) if successes else 0
     print(f"\n✅ Success Rate: {success_rate * 100:.1f}%")

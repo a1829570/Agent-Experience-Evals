@@ -136,3 +136,6 @@ class BrowserController:
         finally:
             if driver:
                 driver.quit()
+            if not locals().get("content"):
+                return {"success": False, "status": "Unknown error", "content": ""}
+

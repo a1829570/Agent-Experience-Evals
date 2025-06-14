@@ -1,132 +1,71 @@
 import json
-import os
-from collections import defaultdict
+from pathlib import Path
+from urllib.parse import urlparse
 
 class AXMemory:
-    def __init__(self, path="results/ax_memory.json"):
-        self.path = path
-        os.makedirs(os.path.dirname(path), exist_ok=True)
-        self.memory = self._load()
-
-    def _load(self):
-        if os.path.exists(self.path):
-            with open(self.path, "r") as f:
-                return json.load(f)
-        return {}
-
-    @property
-    def url_log(self):
-        return {k for k in self.memory if not k.startswith("_")}
-
-    def get_category_by_domain(self, domain):
-        """Returns the best-matching domain category for reuse."""
-        # domain is the netloc (e.g. 'seek.com.au')
-        for recorded_url in self.memory:
-            recorded_domain = recorded_url.split('/')[2] if recorded_url.startswith("http") else recorded_url
-            if domain in recorded_domain or recorded_domain in domain:
-                return recorded_domain
-        return None
-
-
-    def get_best_method_for_category(self, category):
-        from collections import defaultdict
-        method_scores = defaultdict(lambda: {"success": 0, "total": 0, "friction": 0.0})
-
-        for domain, data in self.memory.items():
-            if data.get("category") != category:
-                continue
-            for method, attempts in data.get("methods", {}).items():
-                for att in attempts:
-                    method_scores[method]["total"] += 1
-                    method_scores[method]["friction"] += att.get("friction", 0)
-                    if att.get("success"):
-                        method_scores[method]["success"] += 1
-
-        if not method_scores:
-            return "api"  # fallback
-
-        # Choose method with highest success rate, break ties with lowest friction
-        def method_rank(m):
-            s = method_scores[m]
-            return (s["success"] / s["total"], -s["friction"] / s["total"])
-
-        return sorted(method_scores.keys(), key=method_rank, reverse=True)[0]
-
-    
-    """def get_best_method_for_category(self, domain):
-        #Returns best method (based on success rate and lowest friction) for the matched domain.
-        methods = self.memory.get(f"https://{domain}", {})
-        best_method = None
-        best_score = -1
-
-        for method, stats in methods.items():
-            count = stats.get("count", 1)
-            success_count = stats.get("success_count", 0)
-            total_time = stats.get("total_time", 1.0)
-
-            success_rate = success_count / count
-            friction = total_time / count
-            score = success_rate - 0.1 * friction
-
-            if score > best_score:
-                best_score = score
-                best_method = method
-
-        return best_method or "api"
-    """
-    def save(self):
-        with open(self.path, "w") as f:
-            json.dump(self.memory, f, indent=2)
+    def __init__(self, filepath='ax_memory.json'):
+        self.filepath = Path(filepath)
+        if self.filepath.exists():
+            with self.filepath.open() as f:
+                self.data = json.load(f)
+        else:
+            self.data = {"urls": {}, "categories": {}}
+        self.url_log = self.data["urls"]
 
     def get(self, url):
-        return self.memory.get(url)
+        return self.url_log.get(url.lower(), {})
 
-    def update(self, url, method, success, time_taken):
-        """Update individual URL-based performance metrics."""
-        self.memory.setdefault(url, {})
-        self.memory[url].setdefault(method, {
-            "count": 0, "success_count": 0, "total_time": 0.0
-        })
+    def get_category_by_domain(self, url):
+        domain = urlparse(url.lower()).netloc
+        for category, domains in self.data["categories"].items():
+            for known_domain in domains:
+                if domain == known_domain:
+                    return category
+        return None
 
-        stats = self.memory[url][method]
-        stats["count"] += 1
-        stats["success_count"] += int(success)
-        stats["total_time"] += time_taken
-        stats["success_rate"] = stats["success_count"] / stats["count"]
-        stats["avg_time"] = stats["total_time"] / stats["count"]
+    def get_categories(self):
+        return self.data["categories"]
+
+    def get_domain_list_for_category(self, category):
+        return list(self.data["categories"].get(category, {}).keys())
+
+    def get_best_method_for_category(self, category):
+        stats = self.data["categories"].get(category, {})
+        if not stats:
+            return None
+        methods = {}
+        for domain_stats in stats.values():
+            for method, results in domain_stats.items():
+                if method not in methods:
+                    methods[method] = {"success": 0, "total": 0}
+                methods[method]["success"] += sum(1 for r in results if r["success"])
+                methods[method]["total"] += len(results)
+        if not methods:
+            return None
+        return max(methods.items(), key=lambda x: x[1]["success"] / x[1]["total"])[0]
+
+    def get_category_stats(self, category: str):
+        return self.data["categories"].get(category, {})
 
     def log(self, url, method, result):
-        """Unified logging for both URL and category-based memory."""
-        self.update(url, method, result["success"], result["time"])
+        if not result.get("success"):
+            return  # Only log successful runs
 
-        category = result.get("category")
-        if category:
-            self._log_category(category, method, result["success"], result["time"])
+        url = url.lower()
+        domain = urlparse(url).netloc
 
-        self.save()
-    def _log_category(self, category, method, success, time_taken):
-        """Update memory by content category."""
-        self.memory.setdefault("_categories", {})
-        self.memory["_categories"].setdefault(category, {})
-        self.memory["_categories"][category].setdefault(method, {
-            "count": 0, "success_count": 0, "total_time": 0.0
-        })
+        # Use provided category or infer
+        category = result.get("category") or self.get_category_by_domain(url) or "uncategorized"
+        result["category"] = category  # Ensure category is saved in the result
 
-        stats = self.memory["_categories"][category][method]
-        stats["count"] += 1
-        stats["success_count"] += int(success)
-        stats["total_time"] += time_taken
-        stats["success_rate"] = stats["success_count"] / stats["count"]
-        stats["friction"] = stats["total_time"] / stats["count"]
-
-    def get_category_stats(self, category):
-        """Return success & friction stats for a content category."""
-        fallback = {
-            "api": {"success_rate": 0.0, "friction": 1.0},
-            "dom": {"success_rate": 0.0, "friction": 1.5},
-            "browser": {"success_rate": 0.0, "friction": 2.0}
+        # Log under URL index
+        self.data["urls"][url] = {
+            "method": method,
+            "result": result
         }
-        return self.memory.get("_categories", {}).get(category, fallback)
 
-    def has_url(self, url):
-        return url in self.memory
+        # Log under category-method-domain index
+        self.data["categories"].setdefault(category, {}).setdefault(domain, {}).setdefault(method, []).append(result)
+
+        with self.filepath.open("w") as f:
+            json.dump(self.data, f, indent=2)

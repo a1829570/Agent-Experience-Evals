@@ -1,2 +1,4 @@
 
-https://viewjobs.com.au/?gad_source=1&gad_campaignid=22391712191&gclid=CjwKCAjw9anCBhAWEiwAqBJ-cylPOPdVp1X-RAAhpDQECX5QA9Femq5E4lX3nEE3iWZTgTQIMOS1rxoCC1sQAvD_BwE
+https://swapi.py4e.com/api/people/5/
+https://en.wikipedia.org/wiki/Pope_Francis
+https://swapi.py4e.com/api/people/4/

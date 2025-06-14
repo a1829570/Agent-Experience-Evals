@@ -1,16 +1,13 @@
-# agent/llm_categorizer.py
-
-import re
-from openai import OpenAI
-import os
-from dotenv import load_dotenv
-import time
-
-load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
-client = OpenAI(api_key=api_key)
-
 def categorize_content(html: str) -> str:
+    import re, time
+    from openai import OpenAI
+    import os
+    from dotenv import load_dotenv
+
+    load_dotenv()
+    api_key = os.getenv("OPENAI_API_KEY")
+    client = OpenAI(api_key=api_key)
+
     cleaned = re.sub(r'\s+', ' ', html)[:3000]
 
     assistant = client.beta.assistants.create(
@@ -42,6 +39,20 @@ def categorize_content(html: str) -> str:
     messages = client.beta.threads.messages.list(thread_id=thread.id)
     for message in messages.data:
         if message.role == "assistant":
-            return message.content[0].text.value.strip().lower()
+            response = message.content[0].text.value.strip().lower()
+
+            # 🧠 Normalize to one of the six known categories
+            if "job" in response:
+                return "jobs"
+            elif "news" in response:
+                return "news"
+            elif "ecommerce" in response or "shopping" in response or "retail" in response:
+                return "ecommerce"
+            elif "academic" in response or "education" in response or "encyclopedia" in response:
+                return "academic"
+            elif "media" in response or "entertainment" in response:
+                return "media"
+            else:
+                return "general"
 
     return "general"
