@@ -16,13 +16,16 @@ class AXMemory:
         return self.url_log.get(url.lower(), {})
 
     def get_category_by_domain(self, url):
-        domain = urlparse(url.lower()).netloc
+        if "://" not in url:
+            domain = url.lower()  # already a domain
+            print(f"[DEBUG] (domain input) Using raw domain input: '{domain}'")
+        else:
+            domain = urlparse(url.lower()).netloc
+            print(f"[DEBUG] (url input) Extracted domain '{domain}' from full URL '{url}'")
         for category, domains in self.data["categories"].items():
             for known_domain in domains:
                 if domain == known_domain:
-                    print(f"[DEBUG] Domain '{domain}' matched to category '{category}'")
                     return category
-        print(f"[DEBUG] Domain '{domain}' did not match any known category")
         return None
 
     def get_categories(self):
@@ -71,4 +74,3 @@ class AXMemory:
 
         with self.filepath.open("w") as f:
             json.dump(self.data, f, indent=2)
-        print(f"[DEBUG] Memory updated and written to file for URL: {url}")

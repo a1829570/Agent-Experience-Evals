@@ -15,6 +15,7 @@ class TaskExecutor:
         self.memory = memory
 
     async def run(self, method: str, url: str, config: dict, tried=None) -> dict:
+        print(f"[DEBUG] Starting execution using method: {method} for URL: {url}")
         if config is None:
             config = {}
         if tried is None:
@@ -75,6 +76,7 @@ class TaskExecutor:
                     data_str = json.dumps(data_str)
 
                 category = categorize_content(data_str)
+                print(f"[DEBUG] Content categorized as: {category}")
 
                 print("[INFO] Summarizing content via LLM...")
                 summary = process_web_content(data_str)
@@ -101,6 +103,7 @@ class TaskExecutor:
                     return alt_result
 
         result["final_method"] = method
+        print(f"[DEBUG] Final method used: {method}")
         return result
 
     def get_ranked_fallbacks(self, url, category, tried):

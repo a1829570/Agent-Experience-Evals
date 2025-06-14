@@ -27,18 +27,19 @@ async def main():
         }
 
         try:
-            parsed_url = urlparse(url).netloc
-            category = memory.get_category_by_domain(parsed_url)
-
-            if category:
-                print(f"[DEBUG] Found matching category for domain '{parsed_url}': {category}")
-                preferred = memory.get_best_method_for_category(category)
-                print(f"[DEBUG] Using preferred method for category '{category}': {preferred}")
-                method = preferred
+            url_result = memory.get(url)
+            if url_result and url_result.get("result", {}).get("success"):
+                method = url_result["method"]
+                print(f"[INFO] Reusing previous successful method: {method} for {url}")
             else:
-                print(f"[DEBUG] No known category for domain '{parsed_url}'. Falling back to policy engine.")
-                method = policy.decide(url, config)
-                print(f"[DEBUG] Policy engine selected method: {method}")
+                category = memory.get_category_by_domain(url)
+                if category:
+                    print(f"[INFO] Found similar domain category: {category}")
+                    method = memory.get_best_method_for_category(category)
+                    print(f"[INFO] Using best method for category: {method}")
+                else:
+                    method = policy.decide(url, config)
+
             result = await executor.run(method, url, config)
 
             # Ensure defaults
@@ -48,13 +49,12 @@ async def main():
 
             final_method = result.get("final_method", method)
 
-            if result["success"]:
-                print(f"[DEBUG] Logging result to memory — URL: {url}, Method: {final_method}, Category: {category}")
+            """if result["success"]:
                 memory.log(url, final_method, {
                     "success": result["success"],
                     "time": result["time"],
                     "category": category
-                })
+                })"""
 
             print(f"[LOG] {final_method.upper()} - Success: {result['success']}, Time: {result['time']}s, Friction: {result['friction']}")
             metrics.append((url, final_method, result["success"], result["time"], result["friction"]))

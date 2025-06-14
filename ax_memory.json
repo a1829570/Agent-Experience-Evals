@@ -1,4 +1,212 @@
 {
-  "urls": {},
-  "categories": {}
+  "urls": {
+    "https://en.wikipedia.org/wiki/artificial_intelligence": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 23.81,
+        "category": "wiki"
+      }
+    },
+    "https://swapi.py4e.com/api/films/1/": {
+      "method": "api",
+      "result": {
+        "success": true,
+        "friction": 0.2,
+        "time": 0.84,
+        "category": "api"
+      }
+    },
+    "https://www.indeed.com/jobs?q=software+engineer": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 21.8,
+        "category": "jobs"
+      }
+    },
+    "https://www.nytimes.com/2024/05/01/technology/ai-news.html": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 15.6,
+        "category": "news"
+      }
+    },
+    "https://www.kaggle.com/datasets": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 31.64,
+        "category": "academic"
+      }
+    },
+    "https://www.amazon.com/dp/b08n5wrwnw": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 20.25,
+        "category": "ecommerce"
+      }
+    },
+    "https://github.com/openai/gym": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 17.14,
+        "category": "other"
+      }
+    },
+    "https://www.reddit.com/r/machinelearning/": {
+      "method": "api",
+      "result": {
+        "success": true,
+        "friction": 0.2,
+        "time": 1.33,
+        "category": "other"
+      }
+    },
+    "https://www.irs.gov/forms-pubs/about-form-1040": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 24.47,
+        "category": "other"
+      }
+    },
+    "https://www.youtube.com/watch?v=2epf9rue1ao": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 29.53,
+        "category": "media"
+      }
+    }
+  },
+  "categories": {
+    "wiki": {
+      "en.wikipedia.org": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 23.81,
+            "category": "wiki"
+          }
+        ]
+      }
+    },
+    "api": {
+      "swapi.py4e.com": {
+        "api": [
+          {
+            "success": true,
+            "friction": 0.2,
+            "time": 0.84,
+            "category": "api"
+          }
+        ]
+      }
+    },
+    "jobs": {
+      "www.indeed.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 21.8,
+            "category": "jobs"
+          }
+        ]
+      }
+    },
+    "news": {
+      "www.nytimes.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 15.6,
+            "category": "news"
+          }
+        ]
+      }
+    },
+    "academic": {
+      "www.kaggle.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 31.64,
+            "category": "academic"
+          }
+        ]
+      }
+    },
+    "ecommerce": {
+      "www.amazon.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 20.25,
+            "category": "ecommerce"
+          }
+        ]
+      }
+    },
+    "other": {
+      "github.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 17.14,
+            "category": "other"
+          }
+        ]
+      },
+      "www.reddit.com": {
+        "api": [
+          {
+            "success": true,
+            "friction": 0.2,
+            "time": 1.33,
+            "category": "other"
+          }
+        ]
+      },
+      "www.irs.gov": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 24.47,
+            "category": "other"
+          }
+        ]
+      }
+    },
+    "media": {
+      "www.youtube.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 29.53,
+            "category": "media"
+          }
+        ]
+      }
+    }
+  }
 }
