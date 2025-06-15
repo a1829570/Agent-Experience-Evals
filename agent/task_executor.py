@@ -98,7 +98,9 @@ class TaskExecutor:
             "method_source": config.get("method_source", "unknown"),
             "memory_hit": config.get("memory_hit", False),
             "form_detected": result.get("form_detected", False),
-            "has_form_expected": config.get("expect_form", False)
+            "has_form_expected": config.get("has_form_expected", False),
+            "true_category": config.get("true_category"),
+            "expected_method": config.get("expected_method")
         })
 
 

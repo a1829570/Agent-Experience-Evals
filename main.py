@@ -7,6 +7,18 @@ from ax.experience_logger import ExperienceLogger
 from urllib.parse import urlparse
 import matplotlib.pyplot as plt
 AUTO_SKIP_FORMS = True  # Set to False for interactive mode
+import csv
+
+# Load benchmark ground truth
+ground_truth = {}
+with open("benchmark_suite.csv", newline='') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        ground_truth[row["url"].strip()] = {
+            "true_category": row["true_category"].strip(),
+            "expected_method": row["expected_method"].strip(),
+            "has_form_expected": row["has_form"].strip().lower() == "true"
+        }
 
 
 async def main():
@@ -27,7 +39,17 @@ async def main():
             "expect_form": "form" in url,
             "prefer_speed": not ("captcha" in url),
             "fill_forms": AUTO_SKIP_FORMS,
+            "true_category": None,
+            "expected_method": None,
+            "has_form_expected": False
         }
+
+        # Inject CSV ground truth if available
+        if url in ground_truth:
+            config["true_category"] = ground_truth[url]["true_category"]
+            config["expected_method"] = ground_truth[url]["expected_method"]
+            config["has_form_expected"] = ground_truth[url]["has_form_expected"]
+
 
         memory_hit = False
         method_source = "policy"  # default fallback
@@ -50,8 +72,8 @@ async def main():
                     print(f"[INFO] Found similar domain category: {category}")
                     print(f"[INFO] Using best method for category: {method}")
                 else:
-                    method = policy.decide(url, config)
-                    method_source = "policy"
+                    method, method_source = policy.decide(url, config)
+
 
             # Add metadata before execution
             config.update({

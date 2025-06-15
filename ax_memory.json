@@ -1,36 +1,2136 @@
 {
   "urls": {
+    "https://www.indeed.com/jobs": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 29.57,
+        "category": "jobs",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": false,
+        "has_form_expected": true,
+        "true_category": "jobs",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:48:43.499195"
+      }
+    },
+    "https://www.bbc.com/news": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 25.26,
+        "category": "news",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": false,
+        "has_form_expected": false,
+        "true_category": "news",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:32:57.424471"
+      }
+    },
+    "https://www.kogan.com/au/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 11.63,
+        "category": "ecommerce",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": true,
+        "true_category": "ecommerce",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:27:16.823795"
+      }
+    },
+    "https://arxiv.org/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 7.56,
+        "category": "academic",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": false,
+        "true_category": "academic",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:42:42.001104"
+      }
+    },
+    "https://www.spotify.com/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 14.49,
+        "category": "media",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": true,
+        "true_category": "media",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:46:15.447335"
+      }
+    },
+    "https://api.github.com/users/octocat": {
+      "method": "api",
+      "result": {
+        "success": true,
+        "friction": 0.2,
+        "time": 0.41,
+        "category": "api",
+        "final_method": "api",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": false,
+        "has_form_expected": false,
+        "true_category": "api",
+        "expected_method": "api",
+        "timestamp": "2025-06-15T13:17:11.290690"
+      }
+    },
+    "https://en.wikipedia.org/wiki/machine_learning": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 13.32,
+        "category": "wiki",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": false,
+        "true_category": "wiki",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:01:25.933202"
+      }
+    },
+    "https://www.trello.com/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 13.8,
+        "category": "other",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": true,
+        "true_category": "other",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:43:41.360256"
+      }
+    },
+    "https://www.jstor.org/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 12.59,
+        "category": "academic",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": false,
+        "true_category": "academic",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:29:53.886590"
+      }
+    },
+    "https://www.netflix.com/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 29.56,
+        "category": "media",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": true,
+        "true_category": "media",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:28:01.873692"
+      }
+    },
+    "https://ieeexplore.ieee.org/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 13.19,
+        "category": "academic",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": false,
+        "true_category": "academic",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:44:12.417759"
+      }
+    },
+    "https://swapi.dev/api/people/1/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 25.94,
+        "category": "api",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": false,
+        "has_form_expected": false,
+        "true_category": "api",
+        "expected_method": "api",
+        "timestamp": "2025-06-15T13:37:22.879656"
+      }
+    },
+    "https://www.ebay.com/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 15.35,
+        "category": "ecommerce",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": true,
+        "true_category": "ecommerce",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:41:08.359727"
+      }
+    },
+    "https://simple.wikipedia.org/wiki/science": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 10.46,
+        "category": "wiki",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": false,
+        "true_category": "wiki",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:50:32.136336"
+      }
+    },
+    "https://pokeapi.co/api/v2/pokemon/ditto": {
+      "method": "api",
+      "result": {
+        "success": true,
+        "friction": 0.2,
+        "time": 0.18,
+        "category": "api",
+        "final_method": "api",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": false,
+        "has_form_expected": false,
+        "true_category": "api",
+        "expected_method": "api",
+        "timestamp": "2025-06-15T13:31:07.179827"
+      }
+    },
+    "https://scholar.google.com/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 10.23,
+        "category": "academic",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": false,
+        "true_category": "academic",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:47:26.176170"
+      }
+    },
+    "https://www.theguardian.com/international": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 11.55,
+        "category": "news",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": false,
+        "true_category": "news",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:11:06.327216"
+      }
+    },
+    "https://www.youtube.com/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 16.92,
+        "category": "media",
+        "final_method": "browser",
+        "method_source": "llm",
+        "memory_hit": false,
+        "form_detected": true,
+        "has_form_expected": true,
+        "true_category": "media",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:04:46.835052"
+      }
+    },
+    "https://www.walmart.com/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 15.11,
+        "category": "ecommerce",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": true,
+        "true_category": "ecommerce",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:10:10.283873"
+      }
+    },
+    "https://www.wikidata.org/wiki/q937": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 15.29,
+        "category": "wiki",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": false,
+        "true_category": "wiki",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:42:19.655526"
+      }
+    },
+    "https://www.abc.net.au/news/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 26.07,
+        "category": "news",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": false,
+        "has_form_expected": false,
+        "true_category": "news",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:46:59.838395"
+      }
+    },
+    "https://www.amazon.com/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 10.12,
+        "category": "ecommerce",
+        "final_method": "browser",
+        "method_source": "llm",
+        "memory_hit": false,
+        "form_detected": true,
+        "has_form_expected": true,
+        "true_category": "ecommerce",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:12:13.294834"
+      }
+    },
+    "https://pubmed.ncbi.nlm.nih.gov/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 11.02,
+        "category": "academic",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": false,
+        "true_category": "academic",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:23:53.405234"
+      }
+    },
+    "https://vimeo.com/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 31.1,
+        "category": "media",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": false,
+        "has_form_expected": true,
+        "true_category": "media",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:35:55.259918"
+      }
+    },
+    "https://www.seek.com.au/jobs/in-adelaide": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 27.0,
+        "category": "jobs",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": true,
+        "true_category": "jobs",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:49:31.625842"
+      }
+    },
+    "https://www.linkedin.com/jobs": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 8.73,
+        "category": "jobs",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": true,
+        "true_category": "jobs",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:33:53.080946"
+      }
+    },
+    "https://www.nytimes.com/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 31.52,
+        "category": "news",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": false,
+        "has_form_expected": false,
+        "true_category": "news",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:38:08.214203"
+      }
+    },
+    "https://www.dropbox.com/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 29.89,
+        "category": "other",
+        "final_method": "browser",
+        "method_source": "llm",
+        "memory_hit": false,
+        "form_detected": false,
+        "has_form_expected": true,
+        "true_category": "other",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:20:43.139528"
+      }
+    },
+    "https://www.cnn.com/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 52.13,
+        "category": "news",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": false,
+        "true_category": "news",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:39:15.774537"
+      }
+    },
     "https://en.wikipedia.org/wiki/artificial_intelligence": {
       "method": "browser",
       "result": {
         "success": true,
         "friction": 1.0,
-        "time": 13.26,
+        "time": 12.22,
         "category": "wiki",
         "final_method": "browser",
-        "method_source": "policy",
-        "memory_hit": false,
+        "method_source": "domain",
+        "memory_hit": true,
         "form_detected": true,
         "has_form_expected": false,
-        "timestamp": "2025-06-15T08:51:23.255391"
+        "true_category": "wiki",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:28:32.287566"
+      }
+    },
+    "https://httpbin.org/get": {
+      "method": "api",
+      "result": {
+        "success": true,
+        "friction": 0.2,
+        "time": 1.15,
+        "category": "api",
+        "final_method": "api",
+        "method_source": "llm",
+        "memory_hit": false,
+        "form_detected": false,
+        "has_form_expected": false,
+        "true_category": "api",
+        "expected_method": "api",
+        "timestamp": "2025-06-15T13:28:56.863087"
+      }
+    },
+    "https://www.indeed.com/career-advice": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 11.69,
+        "category": "jobs",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": true,
+        "true_category": "jobs",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:43:10.066982"
+      }
+    },
+    "https://www.etsy.com/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 16.24,
+        "category": "ecommerce",
+        "final_method": "browser",
+        "method_source": "url",
+        "memory_hit": true,
+        "form_detected": true,
+        "has_form_expected": true,
+        "true_category": "ecommerce",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:47:57.514875"
+      }
+    },
+    "https://www.notion.so/": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 25.79,
+        "category": "other",
+        "final_method": "browser",
+        "method_source": "llm",
+        "memory_hit": false,
+        "form_detected": false,
+        "has_form_expected": true,
+        "true_category": "other",
+        "expected_method": "dom",
+        "timestamp": "2025-06-15T13:45:43.614071"
+      }
+    },
+    "https://au.indeed.com": {
+      "method": "browser",
+      "result": {
+        "success": true,
+        "friction": 1.0,
+        "time": 12.6,
+        "category": "jobs",
+        "final_method": "browser",
+        "method_source": "llm",
+        "memory_hit": false,
+        "form_detected": true,
+        "has_form_expected": true,
+        "true_category": "jobs",
+        "expected_method": "browser",
+        "timestamp": "2025-06-15T13:50:08.862235"
       }
     }
   },
   "categories": {
+    "jobs": {
+      "www.indeed.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 25.0,
+            "category": "jobs",
+            "final_method": "browser",
+            "method_source": "policy",
+            "memory_hit": false,
+            "form_detected": false,
+            "has_form_expected": true,
+            "true_category": "jobs",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T12:46:45.480942"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 20.77,
+            "category": "jobs",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": true,
+            "true_category": "jobs",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:09:02.282113"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 22.83,
+            "category": "jobs",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": true,
+            "true_category": "jobs",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:23:27.308149"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 11.69,
+            "category": "jobs",
+            "final_method": "browser",
+            "method_source": "domain",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "jobs",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:29:23.255638"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 9.44,
+            "category": "jobs",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "jobs",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:30:51.763742"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 11.69,
+            "category": "jobs",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "jobs",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:43:10.066982"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 29.57,
+            "category": "jobs",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": true,
+            "true_category": "jobs",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:48:43.499195"
+          }
+        ]
+      },
+      "www.seek.com.au": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 18.16,
+            "category": "jobs",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "jobs",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:16:54.876158"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 27.0,
+            "category": "jobs",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "jobs",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:49:31.625842"
+          }
+        ]
+      },
+      "www.linkedin.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 10.22,
+            "category": "jobs",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "jobs",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:18:24.747860"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 8.73,
+            "category": "jobs",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "jobs",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:33:53.080946"
+          }
+        ]
+      },
+      "au.indeed.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 12.6,
+            "category": "jobs",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "jobs",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:50:08.862235"
+          }
+        ]
+      }
+    },
+    "news": {
+      "www.bbc.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 50.1,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "policy",
+            "memory_hit": false,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T12:48:07.172174"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 27.64,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T12:58:38.413703"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 27.96,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:16:01.122147"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 25.26,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:32:57.424471"
+          }
+        ]
+      },
+      "www.theguardian.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 11.78,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:03:29.014339"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 11.55,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:11:06.327216"
+          }
+        ]
+      },
+      "www.abc.net.au": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 28.17,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:08:25.977087"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 25.38,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:32:18.530039"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 23.89,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:34:35.618547"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 25.1,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:41:49.509587"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 26.34,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:44:55.937055"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 26.07,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:46:59.838395"
+          }
+        ]
+      },
+      "www.nytimes.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 33.86,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:19:52.352212"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 31.52,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:38:08.214203"
+          }
+        ]
+      },
+      "www.cnn.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 52.14,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:22:50.034642"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 52.13,
+            "category": "news",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "news",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:39:15.774537"
+          }
+        ]
+      }
+    },
+    "ecommerce": {
+      "www.kogan.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 29.01,
+            "category": "ecommerce",
+            "final_method": "browser",
+            "method_source": "policy",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "ecommerce",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T12:49:07.861997"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 16.72,
+            "category": "ecommerce",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "ecommerce",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:09:38.403499"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 17.44,
+            "category": "ecommerce",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "ecommerce",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:21:34.051849"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 11.63,
+            "category": "ecommerce",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "ecommerce",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:27:16.823795"
+          }
+        ]
+      },
+      "www.ebay.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 20.26,
+            "category": "ecommerce",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "ecommerce",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T12:56:42.434758"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 12.99,
+            "category": "ecommerce",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "ecommerce",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:01:52.701699"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 15.35,
+            "category": "ecommerce",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "ecommerce",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:41:08.359727"
+          }
+        ]
+      },
+      "www.walmart.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 12.2,
+            "category": "ecommerce",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "ecommerce",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:05:31.597688"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 15.11,
+            "category": "ecommerce",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "ecommerce",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:10:10.283873"
+          }
+        ]
+      },
+      "www.amazon.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 10.12,
+            "category": "ecommerce",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "ecommerce",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:12:13.294834"
+          }
+        ]
+      },
+      "www.etsy.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 22.22,
+            "category": "ecommerce",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "ecommerce",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:40:37.327324"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 16.24,
+            "category": "ecommerce",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "ecommerce",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:47:57.514875"
+          }
+        ]
+      }
+    },
+    "academic": {
+      "arxiv.org": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 11.38,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "policy",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T12:49:51.244128"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 7.47,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:05:54.727943"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 7.67,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:21:02.855349"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 7.56,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:42:42.001104"
+          }
+        ]
+      },
+      "www.jstor.org": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 15.91,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T12:53:24.653689"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 15.55,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:02:51.871289"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 12.67,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:06:53.962669"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 12.59,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:29:53.886590"
+          }
+        ]
+      },
+      "ieeexplore.ieee.org": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 14.04,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T12:55:00.354291"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 17.61,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:04:06.339881"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 10.95,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:18:53.446520"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 13.19,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:44:12.417759"
+          }
+        ]
+      },
+      "scholar.google.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 8.94,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:02:21.176451"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 11.17,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:31:33.219685"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 10.23,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:47:26.176170"
+          }
+        ]
+      },
+      "pubmed.ncbi.nlm.nih.gov": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 10.77,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:13:29.477748"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 11.02,
+            "category": "academic",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "academic",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:23:53.405234"
+          }
+        ]
+      }
+    },
+    "media": {
+      "www.spotify.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 14.41,
+            "category": "media",
+            "final_method": "browser",
+            "method_source": "policy",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "media",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T12:50:34.139311"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 18.95,
+            "category": "media",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "media",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:14:20.930142"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 17.82,
+            "category": "media",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "media",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:30:27.048403"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 14.49,
+            "category": "media",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "media",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:46:15.447335"
+          }
+        ]
+      },
+      "www.netflix.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 28.39,
+            "category": "media",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "media",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T12:54:17.898156"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 25.71,
+            "category": "media",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "media",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:26:43.192599"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 29.56,
+            "category": "media",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "media",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:28:01.873692"
+          }
+        ]
+      },
+      "www.youtube.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 16.92,
+            "category": "media",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "media",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:04:46.835052"
+          }
+        ]
+      },
+      "vimeo.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 34.07,
+            "category": "media",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": false,
+            "has_form_expected": true,
+            "true_category": "media",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:15:19.050156"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 28.49,
+            "category": "media",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": true,
+            "true_category": "media",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:17:53.771800"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 31.11,
+            "category": "media",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": true,
+            "true_category": "media",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:25:58.831142"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 31.1,
+            "category": "media",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": true,
+            "true_category": "media",
+            "expected_method": "browser",
+            "timestamp": "2025-06-15T13:35:55.259918"
+          }
+        ]
+      }
+    },
+    "api": {
+      "api.github.com": {
+        "api": [
+          {
+            "success": true,
+            "friction": 0.2,
+            "time": 0.37,
+            "category": "api",
+            "final_method": "api",
+            "method_source": "policy",
+            "memory_hit": false,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "api",
+            "expected_method": "api",
+            "timestamp": "2025-06-15T12:50:58.547164"
+          },
+          {
+            "success": true,
+            "friction": 0.2,
+            "time": 0.41,
+            "category": "api",
+            "final_method": "api",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "api",
+            "expected_method": "api",
+            "timestamp": "2025-06-15T13:17:11.290690"
+          }
+        ]
+      },
+      "swapi.dev": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 27.36,
+            "category": "api",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "api",
+            "expected_method": "api",
+            "timestamp": "2025-06-15T12:55:55.600567"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 24.21,
+            "category": "api",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "api",
+            "expected_method": "api",
+            "timestamp": "2025-06-15T13:12:57.576284"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 23.83,
+            "category": "api",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "api",
+            "expected_method": "api",
+            "timestamp": "2025-06-15T13:24:31.380372"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 23.78,
+            "category": "api",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "api",
+            "expected_method": "api",
+            "timestamp": "2025-06-15T13:25:08.856290"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 25.62,
+            "category": "api",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "api",
+            "expected_method": "api",
+            "timestamp": "2025-06-15T13:36:38.351784"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 25.94,
+            "category": "api",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "api",
+            "expected_method": "api",
+            "timestamp": "2025-06-15T13:37:22.879656"
+          }
+        ]
+      },
+      "pokeapi.co": {
+        "api": [
+          {
+            "success": true,
+            "friction": 0.2,
+            "time": 0.18,
+            "category": "api",
+            "final_method": "api",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "api",
+            "expected_method": "api",
+            "timestamp": "2025-06-15T12:57:44.364533"
+          },
+          {
+            "success": true,
+            "friction": 0.2,
+            "time": 0.17,
+            "category": "api",
+            "final_method": "api",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "api",
+            "expected_method": "api",
+            "timestamp": "2025-06-15T13:13:45.717753"
+          },
+          {
+            "success": true,
+            "friction": 0.2,
+            "time": 0.3,
+            "category": "api",
+            "final_method": "api",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "api",
+            "expected_method": "api",
+            "timestamp": "2025-06-15T13:16:15.423106"
+          },
+          {
+            "success": true,
+            "friction": 0.2,
+            "time": 0.18,
+            "category": "api",
+            "final_method": "api",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "api",
+            "expected_method": "api",
+            "timestamp": "2025-06-15T13:31:07.179827"
+          }
+        ]
+      },
+      "httpbin.org": {
+        "api": [
+          {
+            "success": true,
+            "friction": 0.2,
+            "time": 1.15,
+            "category": "api",
+            "final_method": "api",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": false,
+            "has_form_expected": false,
+            "true_category": "api",
+            "expected_method": "api",
+            "timestamp": "2025-06-15T13:28:56.863087"
+          }
+        ]
+      },
+      "www.trello.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 11.16,
+            "category": "api",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "other",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:35:03.766433"
+          }
+        ]
+      }
+    },
     "wiki": {
       "en.wikipedia.org": {
         "browser": [
           {
             "success": true,
             "friction": 1.0,
-            "time": 13.26,
+            "time": 16.55,
             "category": "wiki",
             "final_method": "browser",
             "method_source": "policy",
             "memory_hit": false,
             "form_detected": true,
             "has_form_expected": false,
-            "timestamp": "2025-06-15T08:51:23.255391"
+            "true_category": "wiki",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T12:51:50.025055"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 13.32,
+            "category": "wiki",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "wiki",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:01:25.933202"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 12.22,
+            "category": "wiki",
+            "final_method": "browser",
+            "method_source": "domain",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "wiki",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:28:32.287566"
+          }
+        ]
+      },
+      "simple.wikipedia.org": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 12.36,
+            "category": "wiki",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "wiki",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T12:57:20.645517"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 13.76,
+            "category": "wiki",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "wiki",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:11:34.647417"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 10.35,
+            "category": "wiki",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "wiki",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:33:25.281833"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 10.46,
+            "category": "wiki",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "wiki",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:50:32.136336"
+          }
+        ]
+      },
+      "www.wikidata.org": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 14.17,
+            "category": "wiki",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "wiki",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:07:30.378422"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 18.72,
+            "category": "wiki",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "wiki",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:39:50.785833"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 15.29,
+            "category": "wiki",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": false,
+            "true_category": "wiki",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:42:19.655526"
+          }
+        ]
+      }
+    },
+    "other": {
+      "www.trello.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 25.69,
+            "category": "other",
+            "final_method": "browser",
+            "method_source": "policy",
+            "memory_hit": false,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "other",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T12:52:47.801711"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 15.27,
+            "category": "other",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "other",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:06:25.573996"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 11.38,
+            "category": "other",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "other",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:10:36.682382"
+          },
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 13.8,
+            "category": "other",
+            "final_method": "browser",
+            "method_source": "url",
+            "memory_hit": true,
+            "form_detected": true,
+            "has_form_expected": true,
+            "true_category": "other",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:43:41.360256"
+          }
+        ]
+      },
+      "www.dropbox.com": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 29.89,
+            "category": "other",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": false,
+            "has_form_expected": true,
+            "true_category": "other",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:20:43.139528"
+          }
+        ]
+      },
+      "www.notion.so": {
+        "browser": [
+          {
+            "success": true,
+            "friction": 1.0,
+            "time": 25.79,
+            "category": "other",
+            "final_method": "browser",
+            "method_source": "llm",
+            "memory_hit": false,
+            "form_detected": false,
+            "has_form_expected": true,
+            "true_category": "other",
+            "expected_method": "dom",
+            "timestamp": "2025-06-15T13:45:43.614071"
           }
         ]
       }
