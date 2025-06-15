@@ -81,7 +81,7 @@ class BrowserController:
         raise RuntimeError("Failed to configure ChromeDriver after multiple attempts.")
 
 
-    async def open(self, url, fill_forms=True):
+    async def open(self, url, fill_forms=False):
         driver = None
         try:
             driver = self.configure_driver()
@@ -106,14 +106,19 @@ class BrowserController:
 
             # Detect forms
             forms = gather_forms_from_dom(driver)
-            if forms:
+            """if forms:
                 print(f"[INFO] {len(forms)} form(s) detected on the page.")
                 if fill_forms:
                     user_input = input("Form(s) found. Do you want to fill them? (y/n): ").strip().lower()
                     if user_input == "y":
                         fill_all_forms(driver)
                     else:
-                        print("[INFO] Skipping form filling as per user input.")
+                        print("[INFO] Skipping form filling as per user input.")"""
+            if forms:
+                print(f"[INFO] {len(forms)} form(s) detected on the page.")
+                if fill_forms:
+                    print("[INFO] Skipping form filling as configured.")
+
 
             # Scrape DOM content
             scraper = DOMScraper()
@@ -122,8 +127,10 @@ class BrowserController:
             return {
                 "content": content,
                 "status": "Completed",
-                "success": bool(content and content.strip())
+                "success": bool(content and content.strip()),
+                "form_detected": bool(forms)
             }
+
 
         except TimeoutException:
             print(f"[ERROR] Timeout while loading {url}")

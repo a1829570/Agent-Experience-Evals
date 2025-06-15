@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
 from urllib.parse import urlparse
+from datetime import datetime  # Add this to top if not present
 
 class AXMemory:
     def __init__(self, filepath='ax_memory.json'):
@@ -52,6 +53,8 @@ class AXMemory:
     def get_category_stats(self, category: str):
         return self.data["categories"].get(category, {})
 
+    
+
     def log(self, url, method, result):
         if not result.get("success"):
             return  # Only log successful runs
@@ -62,6 +65,11 @@ class AXMemory:
         # Use provided category or infer
         category = result.get("category") or self.get_category_by_domain(url) or "uncategorized"
         result["category"] = category  # Ensure category is saved in the result
+
+        # Ensure important evaluation fields are recorded
+        result["memory_hit"] = result.get("memory_hit", False)
+        result["method_source"] = result.get("method_source", "policy")
+        result["timestamp"] = datetime.utcnow().isoformat()
 
         # Log under URL index
         self.data["urls"][url] = {

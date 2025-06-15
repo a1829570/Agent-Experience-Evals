@@ -6,6 +6,8 @@ from ax.ax_policy_engine import AXPolicyEngine
 from ax.experience_logger import ExperienceLogger
 from urllib.parse import urlparse
 import matplotlib.pyplot as plt
+AUTO_SKIP_FORMS = True  # Set to False for interactive mode
+
 
 async def main():
     with open("websites.txt", "r") as file:
@@ -20,48 +22,58 @@ async def main():
     for url in websites:
         print(f"\n🔗 Processing: {url}")
 
+        # === Prepare base config ===
         config = {
             "expect_form": "form" in url,
             "prefer_speed": not ("captcha" in url),
-            "fill_forms": True
+            "fill_forms": AUTO_SKIP_FORMS,
         }
+
+        memory_hit = False
+        method_source = "policy"  # default fallback
+        method = None
 
         try:
             url_result = memory.get(url)
             if url_result and url_result.get("result", {}).get("success"):
                 method = url_result["method"]
+                memory_hit = True
+                method_source = "url"
                 print(f"[INFO] Reusing previous successful method: {method} for {url}")
             else:
-                category = memory.get_category_by_domain(url)
+                domain = urlparse(url).netloc
+                category = memory.get_category_by_domain(domain)
                 if category:
-                    print(f"[INFO] Found similar domain category: {category}")
                     method = memory.get_best_method_for_category(category)
+                    memory_hit = True
+                    method_source = "domain"
+                    print(f"[INFO] Found similar domain category: {category}")
                     print(f"[INFO] Using best method for category: {method}")
                 else:
                     method = policy.decide(url, config)
+                    method_source = "policy"
+
+            # Add metadata before execution
+            config.update({
+                "memory_hit": memory_hit,
+                "method_source": method_source
+            })
 
             result = await executor.run(method, url, config)
 
-            # Ensure defaults
             result.setdefault("time", 0.0)
             result.setdefault("friction", 2.0)
             result.setdefault("success", False)
 
             final_method = result.get("final_method", method)
 
-            """if result["success"]:
-                memory.log(url, final_method, {
-                    "success": result["success"],
-                    "time": result["time"],
-                    "category": category
-                })"""
-
             print(f"[LOG] {final_method.upper()} - Success: {result['success']}, Time: {result['time']}s, Friction: {result['friction']}")
             metrics.append((url, final_method, result["success"], result["time"], result["friction"]))
 
         except Exception as e:
             print(f"[ERROR] Failed to process {url}: {e}")
-            metrics.append((url, method if 'method' in locals() else 'unknown', False, 0.0, 2.0))
+            metrics.append((url, method if method else 'unknown', False, 0.0, 2.0))
+
 
     # === PLOT METRICS ===
     urls, methods, successes, times, frictions = zip(*metrics)

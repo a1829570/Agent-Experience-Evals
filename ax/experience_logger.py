@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 
 class ExperienceLogger:
-    def __init__(self, log_path="results/experience_log.json"):
+    def __init__(self, log_path="experience_log.json"):
         os.makedirs(os.path.dirname(log_path), exist_ok=True)
         self.log_path = log_path
 

@@ -1,10 +1,2 @@
 https://en.wikipedia.org/wiki/Artificial_intelligence
-https://swapi.py4e.com/api/films/1/
-https://www.indeed.com/jobs?q=software+engineer
-https://www.nytimes.com/2024/05/01/technology/ai-news.html
-https://www.kaggle.com/datasets
-https://www.amazon.com/dp/B08N5WRWNW
-https://github.com/openai/gym
-https://www.reddit.com/r/MachineLearning/
-https://www.irs.gov/forms-pubs/about-form-1040
-https://www.youtube.com/watch?v=2ePf9rue1Ao
+

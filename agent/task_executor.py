@@ -47,10 +47,12 @@ class TaskExecutor:
                 print(f"[INFO] Browser scraping completed and content processed.")
                 if isinstance(result["data"], dict):
                     result["success"] = result["data"].get("success", False)
+                    result["form_detected"] = result["data"].get("form_detected", False)
                 else:
                     print("[WARN] result['data'] was None or not a dict — defaulting to failure.")
                     result["success"] = False
                     result["data"] = {"success": False}
+                    result["form_detected"] = False
 
                 result["friction"] = 1.0 if result["success"] else 2.0
 
@@ -91,8 +93,14 @@ class TaskExecutor:
             "success": result["success"],
             "friction": result["friction"],
             "time": result["time"],
-            "category": category
+            "category": category,
+            "final_method": result.get("final_method", method),
+            "method_source": config.get("method_source", "unknown"),
+            "memory_hit": config.get("memory_hit", False),
+            "form_detected": result.get("form_detected", False),
+            "has_form_expected": config.get("expect_form", False)
         })
+
 
         if not result["success"]:
             fallback_methods = self.get_ranked_fallbacks(url, category, tried)
